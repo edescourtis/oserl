@@ -1,3 +1,5 @@
+%% coding: latin-1
+
 %%% Copyright (C) 2009 Enrique Marcote, Miguel Rodriguez
 %%% All rights reserved.
 %%%

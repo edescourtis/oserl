@@ -134,4 +134,13 @@
          inactivity_time   = ?INACTIVITY_TIME,
          response_time     = ?RESPONSE_TIME}).
 
+
+-ifdef(use_new_time_api).
+-define(NOW(), erlang:timestamp()).
+-define(UNOW(), {erlang:monotonic_time(), erlang:unique_integer([monotonic]), erlang:unique_integer([monotonic])}).
+-else.
+-define(NOW(), os:timestamp()).
+-define(UNOW(), erlang:now()).
+-endif.  %  -ifdef(use_new_time_api)
+
 -endif.  % -ifndef(oserl)
